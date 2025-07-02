@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>The Most Astronomically Absurd Date Picker Ever Created</title>
+    <link rel="icon" href="earth.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body bgcolor="#ffffff" text="#000000">
+    <center>
+      <div class="simulator-section">
+        <table
+          border="1"
+          cellpadding="10"
+          cellspacing="0"
+          bgcolor="#ffffff"
+          width="500"
+        >
+          <tr>
+            <td align="center">
+              <font size="3"><b>select your date of birth</b></font>
+              <br /><br />
+
+              <div class="solar-system">
+                <div class="orbit-guide"></div>
+                <img src="sun.png" alt="Sun" class="sun-image" />
+
+                <div class="earth-container">
+                  <img
+                    src="earth.png"
+                    alt="Earth"
+                    class="earth-image"
+                    draggable="false"
+                  />
+                </div>
+              </div>
+
+              <br />
+              <font size="3" id="dateOutput"><b>January 1, 2024</b></font>
+              <br /><br />
+
+              <form id="dobForm">
+                <input type="submit" value="submit" />
+              </form>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <br />
+
+      <div class="results-section" id="result" style="display: none">
+        <table
+          border="1"
+          cellpadding="10"
+          cellspacing="0"
+          bgcolor="#ffffff"
+          width="500"
+        >
+          <tr>
+            <td align="center">
+              <font size="3"><b>COMPUTATION RESULTS</b></font>
+              <br /><br />
+              <font size="2" id="ageResult"></font>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <br /><br />
+
+      <div class="footer-section">
+        <table
+          border="1"
+          cellpadding="3"
+          cellspacing="0"
+          bgcolor="#ffffff"
+          width="550"
+        >
+          <tr>
+            <td align="center">
+              <font size="1">
+                MADE WITH &hearts; BY APOORV DARSHAN<br />
+                <a href="https://github.com/apoorvdarshan">GITHUB</a> |
+                <a href="https://x.com/apoorvdarshan">X</a> |
+                <a href="https://linkedin.com/in/apoorvdarshan">LINKEDIN</a> |
+                <a href="https://youtube.com/@apoorvdarshan">YOUTUBE</a><br />
+                <a href="https://instagram.com/404apoorv">INSTAGRAM</a> |
+                <a href="mailto:ad13dtu@gmail.com">MAIL</a> |
+                <a href="https://apoorvdarshan.com">PORTFOLIO</a>
+              </font>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </center>
+
+    <script src="script.js"></script>
+  </body>
+</html>
