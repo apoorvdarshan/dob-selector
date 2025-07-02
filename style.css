@@ -138,6 +138,10 @@ input[type="submit"] {
   cursor: pointer;
   width: 120px;
   touch-action: manipulation;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.2);
 }
 
 input[type="submit"]:hover {
@@ -147,6 +151,20 @@ input[type="submit"]:hover {
 input[type="submit"]:active {
   border: 2px inset #c0c0c0;
   background: #a0a0a0;
+}
+
+/* Ensure form elements are touchable */
+form {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
+  touch-action: manipulation;
+}
+
+form * {
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  user-select: auto;
 }
 
 /* Enhanced responsive design for mobile */

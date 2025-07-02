@@ -85,7 +85,9 @@ class OrbitalDatePicker {
 
     // Touch events for mobile
     this.earth.addEventListener("touchstart", this.handleTouchStart.bind(this));
-    document.addEventListener("touchmove", this.handleTouchMove.bind(this));
+    document.addEventListener("touchmove", this.handleTouchMove.bind(this), {
+      passive: false,
+    });
     document.addEventListener("touchend", this.handleTouchEnd.bind(this));
 
     // Prevent default drag behavior
@@ -128,7 +130,9 @@ class OrbitalDatePicker {
   }
 
   handleTouchEnd(e) {
-    e.preventDefault();
+    if (this.isDragging) {
+      e.preventDefault();
+    }
     this.isDragging = false;
   }
 
@@ -271,6 +275,7 @@ class OrbitalDatePicker {
 
   handleFormSubmit(e) {
     e.preventDefault();
+    console.log("Form submitted! Date selected:", this.selectedDate);
 
     // Calculate age
     const today = new Date();
