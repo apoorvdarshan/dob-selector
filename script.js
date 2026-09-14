@@ -64,10 +64,19 @@ class OrbitalDatePicker {
   setCurrentDate() {
     const today = new Date();
     const dayOfYear = this.getDayOfYear(today);
-    this.currentAngle = (dayOfYear / 365) * 360;
+    const days = this.daysInYear(today.getFullYear());
+    this.currentAngle = (dayOfYear / days) * 360;
     this.previousAngle = this.currentAngle;
     this.totalRotations = 0;
     this.updateEarthPosition();
+  }
+
+  isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+  }
+
+  daysInYear(year) {
+    return this.isLeapYear(year) ? 366 : 365;
   }
 
   getDayOfYear(date) {
@@ -212,7 +221,11 @@ class OrbitalDatePicker {
     // Apply Kepler's second law: areas swept in equal times are equal
     // This means Earth moves faster when closer to sun (perihelion)
     const meanAnomaly = this.currentAngle;
-    const dayOfYear = Math.floor((meanAnomaly / 360) * 365) + 1;
+    const days = this.daysInYear(currentYear);
+    const dayOfYear = Math.min(
+      days,
+      Math.floor((meanAnomaly / 360) * days) + 1
+    );
     this.selectedDate = this.getDateFromDayOfYear(dayOfYear, currentYear);
 
     // Update date display
